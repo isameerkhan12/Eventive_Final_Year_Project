@@ -1,0 +1,144 @@
+//GET REQUEST
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:5000/find_ride?slat=24.873003196931517&slong=67.09391657264112&dlat=24.924508&dlong=67.030546&require_seats=1",
+  "method": "GET",
+  "headers": {
+    "Content-Type": "application/json"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+//POST REQUEST
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:5000/driver",
+  "method": "POST",
+  "headers": {},
+  "processData": false,
+  "data": "{\"Driver_Name\":\"Alian\",\"Car_name\":\"Corolla\",\"Car_num\":\"LLL-787\",\"color\":\"White\",\"Driver_phone_num\":\"03110320430\",\"num_of_seats\":\"6\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+//OBJECT FOR POST
+{
+"Driver_Name":"Sameer",
+"Car_name":"Alto",
+"Car_num":"GHI-678",
+"color":"White",
+"Driver_phone_num":"03115467235",
+"num_of_seats":"3"
+}
+
+//INSERT PASSENGER TO DB
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:5000/insert_passenger",
+  "method": "POST",
+  "headers": {},
+  "processData": false,
+  "data": "{\"passenger_name\":\"Wasif\",\"cnic\":\"4251909435675\",\"phone_num\":\"03339495392\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+//POST OBJECT
+{
+  "passenger_name":"Wasif",
+  "cnic":"4251909435675",
+  "phone_num":"03339495392"
+}
+
+//POST REQUEST FOR VERIFY LOGIN
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:5000/verify_user",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "data": "{\"phone_num\":\"03123456987\",\"user_type\":\"passenger\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+//OBJECT TO PASS IN "RAPID API" JSON FIELD
+{
+  "phone_num":"03123456987",
+  "user_type":"passenger"
+}
+
+
+//POST REQUEST TO UPDATE SEATS Available
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:5000/find_ride",
+  "method": "POST",
+  "headers": {},
+  "processData": false,
+  "data": "{\"num_of_seats_booked\":\"2\",\"route_id\":\"4\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+//POST REQUEST TO POST ROUTE TO DB
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:5000/add_route",
+  "method": "POST",
+  "headers": {},
+  "processData": false,
+  "data": "{\"route_name\":\"NBV\",\"slat\":\"24.892726616404264\",\"slong\":\"67.19470305227793\",\"dlat\":\"24.931418033806384\",\"dlong\":\"67.01956443482545\",\"driver_id\":\"10\",\"available_seats\":\"3\",\"fare_type\":\"distance_time\",\"fare_per_km\":\"2.0\",\"fare_per_min\":\"2.33\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+//Object For request
+{
+  "route_name":"NBV",
+  "slat":"24.892726616404264",
+  "slong":"67.19470305227793",
+  "dlat":"24.931418033806384",
+  "dlong":"67.01956443482545",
+  "driver_id":"10",
+  "available_seats":"3",
+  "fare_type":"distance_time",
+  "fare_per_km":"2.0",
+  "fare_per_min":"2.33"
+}
+
+
+//GET DRIVER HISTORY
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://127.0.0.1:5000/driver?driver_id=9",
+  "method": "GET",
+  "headers": {}
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
